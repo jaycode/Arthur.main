@@ -1,0 +1,19 @@
+<div id="doc-view" class="doc-view page" data-bind="with: activeDoc">
+  <div class="doc-topbar">
+    <h1 class="doc-name" data-bind="text: name">Firstdoc.pdf</h1>
+    <h2 class="doc-project_name">in <span data-bind="text: $root.project.name">Defaultish</span></h2>
+  </div>
+  <div class="doc-content_wrapper" data-bind="">
+    <svg id="doc-content" class="doc-content" data-bind="event: {mousemove: $root.showCursorPosition}, foreach: {data: pages}, attr: {width: maxWidth, height: totalHeight}">
+      <g class="doc-page" data-bind="attr: {id: 'doc-page-'+number()}">
+        <rect data-bind="attr: {id: 'doc-pageframe-'+number(), x: xRender, y: yRender, height: height, width: width}" class="doc-pageframe" />
+      </g>
+    </svg>
+  </div>
+  <div class="ruler-wrapper h">
+    <div class="ruler h unselectable"></div>
+  </div>
+  <div class="ruler-wrapper v">
+    <div class="ruler v unselectable"></div>
+  </div>
+</div>
