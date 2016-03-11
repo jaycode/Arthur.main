@@ -27,7 +27,7 @@ app = Flask(__name__)
 app.config.from_object('config')
 
 # Session
-redis = Redis(host=self.config['REDIS_HOST'], port=self.config['REDIS_PORT'], password=self.config['REDIS_PASSWORD'])
+redis = Redis(host=app.config['REDIS_HOST'], port=app.config['REDIS_PORT'], password=app.config['REDIS_PASSWORD'])
 app.session_interface = RedisSessionInterface(redis)
 
 # Define the connection object which is imported
