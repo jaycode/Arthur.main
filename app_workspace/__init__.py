@@ -40,7 +40,7 @@ class MongoClient(mongo_client.MongoClient):
 port = ''
 if config.MONGO_PORT:
     port = ':%s' % config.MONGO_PORT
-uri = "mongodb://%s:%s@%s%s/%s?authMechanism=SCRAM-SHA-1" % \
+uri = "mongodb://%s%s@%s%s/%s?authMechanism=SCRAM-SHA-1" % \
       (config.MONGO_USERNAME, config.MONGO_PASSWORD, config.MONGO_HOST, port, config.MONGO_DBNAME)
 mongo = MongoClient(uri)
 

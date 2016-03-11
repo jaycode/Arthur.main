@@ -14,7 +14,7 @@ BASE_DIR = os.path.realpath(
 
 # Define the database
 MONGO_HOST = 'ds053894.mlab.com'
-MONGO_PORT = 27017
+MONGO_PORT = 53894
 MONGO_DBNAME = 'arthur'
 MONGO_USERNAME = 'arthur_main'
 MONGO_PASSWORD = 'iojF213;!'
