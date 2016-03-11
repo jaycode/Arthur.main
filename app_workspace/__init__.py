@@ -72,5 +72,7 @@ attrs = filter(lambda x: x[0] != '_' and str.isupper(x[0]), dir(config))
 mapped_config = {}
 for attr in attrs:
     mapped_config[attr] = getattr(config, attr)
+print "Before app started. Mapped config is:"
+print mapped_config
 app = Application(mapped_config)
 
