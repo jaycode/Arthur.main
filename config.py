@@ -38,4 +38,4 @@ SECRET_KEY = "ln129ej1-kl"
 # Redis server setup - used for sessions
 REDIS_HOST = 'pub-redis-10372.us-east-1-2.4.ec2.garantiadata.com'
 REDIS_PORT = 10372
-REDIS_PASSWORD = 'iojF213;!'
+REDIS_PASSWORD = 'd-01idlka!'

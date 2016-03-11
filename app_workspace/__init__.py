@@ -62,8 +62,6 @@ class Application(tornado.web.Application):
         settings = {
             "cookie_secret": self.config['SECRET_KEY']
         }
-        print "hello"
-        print self.config['REDIS_PASSWORD']
         redis_conn = Redis(host=self.config['REDIS_HOST'], port=self.config['REDIS_PORT'], password=self.config['REDIS_PASSWORD'])
         self.session_store = RedisSessionStore(redis_conn)
         super(Application, self).__init__(handlers, **settings)
@@ -72,7 +70,5 @@ attrs = filter(lambda x: x[0] != '_' and str.isupper(x[0]), dir(config))
 mapped_config = {}
 for attr in attrs:
     mapped_config[attr] = getattr(config, attr)
-print "Before app started. Mapped config is:"
-print mapped_config
 app = Application(mapped_config)
 
