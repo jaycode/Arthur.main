@@ -62,6 +62,8 @@ class Application(tornado.web.Application):
         settings = {
             "cookie_secret": self.config['SECRET_KEY']
         }
+        print "hello"
+        print self.config['REDIS_PASSWORD']
         redis_conn = Redis(host=self.config['REDIS_HOST'], port=self.config['REDIS_PORT'], password=self.config['REDIS_PASSWORD'])
         self.session_store = RedisSessionStore(redis_conn)
         super(Application, self).__init__(handlers, **settings)
