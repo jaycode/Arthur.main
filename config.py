@@ -36,5 +36,6 @@ CSRF_SESSION_KEY = "dojq029j1lk"
 SECRET_KEY = "ln129ej1-kl"
 
 # Redis server setup - used for sessions
-REDIS_HOST = '192.168.99.100'
-REDIS_PORT = 6379
+REDIS_HOST = 'pub-redis-10372.us-east-1-2.4.ec2.garantiadata.com'
+REDIS_PORT = 10372
+REDIS_PASSWORD = 'iojF213;!'
