@@ -62,6 +62,9 @@ First `cd` to root directory (the same directory that contains
 this readme file, then install grunt with `npm install grunt`. Other npm modules will then be 
 asked to be installed (such as `grunt-sass` and `grunt-contrib-watch`).
 
+Note: No need to install npm and grunt on server, just do it on your development machine.
+Installation instructions are [here](https://nodejs.org/en/download/package-manager/)
+
 When all npm modules have been installed, grunt watcher can be run by command `grunt`
 inside root directory which will detect updates to scss and javascript files then compile them 
 into css file readily used in app.
