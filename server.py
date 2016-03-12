@@ -18,7 +18,7 @@ application = Application([
 
 print "starting..."
 if __name__ == "__main__":
-    PORT = int(os.getenv('VCAP_APP_PORT', 8000))
+    PORT = int(os.getenv('VCAP_APP_PORT', 8001))
     HOST = str(os.getenv('VCAP_APP_HOST', 'localhost'))
     # PORT = process.env.VCAP_APP_PORT || 8000
     print("Start serving at port %i" % PORT)

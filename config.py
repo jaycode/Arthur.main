@@ -21,6 +21,9 @@ BASE_DIR = os.path.realpath(
     )
 )
 
+# Path to workspace app
+WORKSPACE_PATH = os.getenv('ARTHUR_WORKSPACE_PATH', 'http://192.168.99.100:49152')
+
 # Define the database
 MONGO_HOST = os.getenv('ARTHUR_MONGO_HOST', '192.168.56.1')
 MONGO_PORT = os.getenv('ARTHUR_MONGO_PORT', 27017)

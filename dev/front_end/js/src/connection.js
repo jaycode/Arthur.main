@@ -80,18 +80,28 @@
       'jsonp-polling': 1
     }
 
-    app.connection.handler = new SockJS('http://' + window.location.hostname + ':49152/workspace', transports);
+    $.ajax({'url': '/config'}).done(
+      function(config, status) {
+        if(status == 'success') {
+          var workspacePath = JSON.parse(config).workspace_path;
+          app.connection.handler = new SockJS(workspacePath, transports);
 
-    app.connection.handler.onopen = function() {
-    };
+          app.connection.handler.onopen = function() {
+          };
 
-    app.connection.handler.onmessage = function(e) {
-      self.log(e.data);
-    };
+          app.connection.handler.onmessage = function(e) {
+            self.log(e.data);
+          };
 
-    app.connection.handler.onclose = function() {
-      app.connection.handler = null;
-    };
+          app.connection.handler.onclose = function() {
+            app.connection.handler = null;
+          };
+        }
+        else {
+          alert("Error: Cannot connect to config page. Please refresh the page");
+        }
+      }
+    );
   }
 
   app.connection.disconnect = function() {
