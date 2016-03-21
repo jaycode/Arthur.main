@@ -15,6 +15,7 @@ def run_index():
 @mod_main.route('/config')
 def run_config():
     client_config = {
-        'workspace_path': config.WORKSPACE_PATH
+        'workspace_path': config.WORKSPACE_PATH,
+        'session_id': session.sid
     }
     return json.dumps(client_config)

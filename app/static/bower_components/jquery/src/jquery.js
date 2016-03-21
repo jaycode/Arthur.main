@@ -1,17 +1,18 @@
-define([
+define( [
 	"./core",
 	"./selector",
 	"./traversing",
 	"./callbacks",
 	"./deferred",
+	"./deferred/exceptionHook",
 	"./core/ready",
-	"./support",
 	"./data",
 	"./queue",
 	"./queue/delay",
 	"./attributes",
 	"./event",
 	"./event/alias",
+	"./event/focusin",
 	"./manipulation",
 	"./manipulation/_evalUrl",
 	"./wrap",
@@ -32,6 +33,6 @@ define([
 	"./exports/amd"
 ], function( jQuery ) {
 
-return (window.jQuery = window.$ = jQuery);
+return ( window.jQuery = window.$ = jQuery );
 
-});
+} );

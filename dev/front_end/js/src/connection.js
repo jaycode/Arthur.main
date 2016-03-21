@@ -85,7 +85,17 @@
       function(config, status) {
         if(status == 'success') {
           var workspacePath = JSON.parse(config).workspace_path;
-          app.connection.handler = new SockJS(workspacePath, transports);
+          // There's no documentation for this. For reference, just go to:
+          // https://github.com/sockjs/sockjs-client/blob/0b4879d5e0b7f44d9f8accb28759fd965f70ea1f/dist/sockjs.js#L655
+          app.connection.handler = new SockJS(workspacePath, null, {
+            'transports': transports,
+            // Not sure what sessionId is for, it does not change anything.
+            // 'sessionId': JSON.parse(config).session_id
+            // 'sessionId': function() {
+            //   return '123123';
+            // }
+            // 'sessionId': 4
+          });
 
           app.connection.handler.onopen = function() {
           };
