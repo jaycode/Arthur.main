@@ -77,7 +77,8 @@
       'iframe-htmlfile': 1,
       'xhr-polling': 1,
       'iframe-xhr-polling': 1,
-      'jsonp-polling': 1
+      'jsonp-polling': 1,
+      'origins': '*'
     }
 
     $.ajax({'url': '/config'}).done(

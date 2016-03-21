@@ -149,7 +149,7 @@ class Session:
 
     def __getitem__(self, key):
         return self._sessiondata[key]
-
+    
     def __setitem__(self, key, value):
         self._sessiondata[key] = value
         self._dirty()
