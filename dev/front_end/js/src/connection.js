@@ -91,9 +91,9 @@
             'transports': transports,
             // Not sure what sessionId is for, it does not change anything.
             // 'sessionId': JSON.parse(config).session_id
-            // 'sessionId': function() {
-            //   return '123123';
-            // }
+            'sessionId': function() {
+              return JSON.parse(config).session_id;
+            }
             // 'sessionId': 4
           });
 
